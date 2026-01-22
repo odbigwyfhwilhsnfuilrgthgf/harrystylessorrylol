@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Clicking Test </title>
+<link rel="stylesheet" href="clicking_style1.css">
+<script type="text/javascript">
+var clicks = 0;
+var speed = 0;
+var time = 0; 
+function click_func(){
+	clicks += 1;
+
+	document.getElementById("clicks").innerHTML = clicks; 
+}
+setInterval(function (){
+	time += 0.1;
+	time = Math.round(time*100)/100;
+	speed = Math.round(clicks/time * 100) / 100;
+	document.getElementById("time").innerHTML = time;
+	document.getElementById("speed").innerHTML = speed; 
+}, 100);
+</script>
+</head>
+<body>
+<p> Time: <a id="time"> 0 </a> </p>
+
+<p> Clicks: <a id="clicks"> 0 </a> </p>
+
+<p> Clicking Speed: <a id="speed"> 0 </a> </p>
+
+<button type="button" onClick= "click_func()"> 
+	Click Here 
+</button>
+
+</body>
+</html>
